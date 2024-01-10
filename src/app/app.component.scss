@@ -1,0 +1,21 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    // min-height: 100vh;
+  }
+  
+  app-header {
+    /* Your header styles here */
+  }
+  
+  router-outlet {
+    /* Your content styles here */
+    flex: 1;
+    // max-height: 80%;
+    
+  }
+  
+  app-footer {
+
+  }
+  

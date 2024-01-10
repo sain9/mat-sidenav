@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .top mat-icon {
+    margin-top: 2rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: 5%;
+    font-size: 27px;
+    // color: rgb(3, 120, 120);
+    color: whitesmoke;
+   
+  }
+
+  .user {
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 50px;
+  
+    img {
+      margin-top: 16px;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      border: 3px solid  rgb(156, 207, 156);
+    }
+  
+    .name {
+      font-family: sans-serif;
+      margin-top: 10px;
+    }
+  
+    .mail {
+      font-family: sans-serif;
+      color: gray;
+      margin-top: -5px;
+    }
+  }
+  
+  .menu-head {
+    font-family: sans-serif;
+    color: #46e0ad;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-left: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .menu-item {
+    .menu-button {
+      display: flex;
+      justify-content: flex-start; /* Ensure content starts from the left */
+      align-items: center;
+      width: 100%; /* Set the width to 100% */
+      color: gray;
+      padding: 5px;
+      padding-left: 60px;
+      margin-bottom: 10px;
+    }
+    
+    .subtopics {
+      margin-top: -8px;
+      margin-bottom: 5px;
+      margin-left: 3px;
+      border-radius: 5px;
+      background-color: white;
+      border: solid white  ;
+     
+      max-height: 0;
+      overflow: hidden;
+      // transition: max-height 0.3s ease-in-out; /* Add transition for max-height with a 0.3s duration */
+    }
+    
+    .subtopics.active {
+      max-height: 500px; /* You can adjust the max-height value based on your content */
+    }
+    
+    button {
+      width: 100%;
+    }
+    
+    button:hover {
+      color: rgb(252, 252, 252);
+      background-color: #21343e;
+    }
+    
+    
+    
+  
+    .menu-button mat-icon {
+      margin-right: 10px; /* Adjust margin as needed */
+    }
+  
+    .menu-button span {
+      color: whitesmoke;
+    }
+  
+    .menu-button:hover {
+      background-color: #285163;
+      color: #46e0ad;
+    }
+  
+    .menu-button:focus {
+      background-color: #46e0ad;
+      color: whitesmoke;
+    }
+  }
+  
+
+  ::ng-deep .custom-mat-menu {
+  margin-left: 0.5rem;
+    padding: 1vw;
+    font-size: 16px; /* Adjust the font size */
+    width: 14rem;    /* Set the width to make it larger */
+    /* Add any other styles you want to customize */
+  }

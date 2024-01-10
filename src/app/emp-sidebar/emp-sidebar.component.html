@@ -1,0 +1,65 @@
+
+<div class="navbar">
+    <div class="top">
+            <mat-icon  class="hovered"  (mouseenter)="onEnter()" (mouseleave)="onLeave()">
+                    {{ isHovered ? 'notifications_fill' : 'notifications_none' }}
+            </mat-icon>
+   </div>
+<div class="user">
+   <img src="../../assets/employee.jpg" alt="Admin">
+   <h4 class="name">Employee</h4>
+   <p class="mail" >employee@gmail.com</p>
+</div>
+<!-- menu -->
+<div class="menu">
+
+   <div class="menu-head">
+           <span>Dashboard</span>   
+   </div>
+
+   <!-- Home -->
+   <div class="menu-item">
+       <button mat-button class="menu-button">
+                   <mat-icon>dashboard</mat-icon>
+                   <span>Home</span>
+       </button>
+
+       <!-- Status -->
+       <button mat-button class="menu-button">
+                   <mat-icon>message</mat-icon>
+                   <span>Status</span>
+       </button>
+
+       <!-- Application -->
+       <button [matMenuTriggerFor]="belowMenu" mat-button class="menu-button" (click)="onApplicationsClick()">
+                   <mat-icon>comment</mat-icon>
+                   <span>Applications</span>
+       </button>
+       <mat-menu class="custom-mat-menu" #belowMenu="matMenu" yPosition="below" >
+        <button mat-menu-item>General Application</button> <mat-divider></mat-divider>
+        <button mat-menu-item>Leave Application</button>
+      </mat-menu>
+
+       <!-- Compensation -->
+       <button  (click)="toggleSubtopics(); onCompensationClick()" mat-button class="menu-button">
+                   <mat-icon>pages</mat-icon>
+                   <span>Compensation</span>
+       </button>
+       <div *ngIf="showSubtopics" class="subtopics" [class.active]="showSubtopics">
+        <div >
+            
+                <button mat-button (click)="selectSubtopic('Client Compensation')">Client Compensation</button> <mat-divider></mat-divider>
+                <button mat-button (click)="selectSubtopic('Support Compensation')">Support Compensation</button> <mat-divider></mat-divider>
+                <button mat-button (click)="selectSubtopic('Performance-Based Compensation')">Performance-Based Compensation</button> <mat-divider></mat-divider>
+                <button mat-button (click)="selectSubtopic('Basic Compensation')">Basic Compensation Information</button>
+        
+        </div>
+    </div>
+       <button mat-button class="menu-button" (click)="onEmpHolidaysClick() ; onCalendarClick()">
+                   <mat-icon>settings</mat-icon>
+                   <span>Employee Holidays</span>
+       </button>
+
+   </div>
+</div>
+</div>

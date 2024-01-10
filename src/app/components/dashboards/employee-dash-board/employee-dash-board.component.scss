@@ -1,0 +1,159 @@
+/* Add some styling to the toolbar */
+.mat-toolbar {
+    background-color: #1976D2;
+    color: #fff;
+    margin-bottom: 2vh;
+  }
+  
+  /* Style the selected navigation item */
+  .mat-button.mat-primary {
+    background-color: #0D47A1;
+  }
+  
+  /* Center-align the buttons in the toolbar */
+  .mat-toolbar .mat-button {
+    margin: 0 10px;
+  }
+  
+  /* Style the "Add Holiday" button */
+  .addbtn {
+    background-color: #4CAF50;
+    color: #fff;
+    margin: 10px;
+  }
+  
+  /* Style the selected holiday list */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 5px 0;
+  }
+  
+  /* Style the Compensation subtopic display */
+  .mat-submenu {
+    background-color: #F44336;
+    color: #fff;
+    border: 1px solid #E53935;
+  }
+
+  .contianer{
+    margin-left: 10px;
+  }
+  
+
+
+  mat-sidenav {
+    margin-top:1.2rem;
+    height: calc(100vh - 12vh); 
+    width: 15rem;
+    background-color: #21343e;
+    color: white;
+    border: 3px solid #263238;
+  }
+  
+  .mat-sidenav-content {
+    margin-top:1.2rem;
+    height: calc(100vh - 12vh); 
+    // background: linear-gradient(to bottom, #212223, #464f59, #4b6471);
+  }
+  
+  // .main {
+  //   margin-left: 1.5rem;
+  //   font-weight: 900;
+  //   font-size: 1.3rem;
+  //   color: rgb(142, 143, 142);
+  // }
+  
+  @media (max-width: 768px) {
+    .mat-sidenav {
+      width: 60%;;
+    }
+    .main{
+      margin-left: 0;
+      
+    }
+  }
+  
+//compensation
+/* Updated compensation card styles */
+
+.main-container {
+  margin-top: 3vh;
+  display: flex;
+  align-items: center; /* Vertically center the card */
+  justify-content: center; /* Horizontally center the card */
+  height: 100%; /* Full height of the container */
+}
+
+.main {
+  /* Your existing styles for the .main card */
+  width: 80%;
+  align-content: center;
+}
+
+
+.custom-card {
+  background: linear-gradient(135deg, #f8c0c8, #ff8a94); /* Gradient background */
+  border: 1px solid #f4a4ab; /* Border color */
+  border-radius: 12px; /* Rounded corners */
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for depth */
+  transition: transform 0.2s;
+  overflow: hidden;
+  height: 100%;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Elevate the card on hover */
+}
+
+/* Header style */
+.custom-card-header {
+  background: #ff5a5f; /* Header background color */
+  color: #fff; /* Header text color */
+  padding: 16px;
+  border-top-left-radius: 12px; /* Rounded top-left corner */
+  border-top-right-radius: 12px; /* Rounded top-right corner */
+  text-transform: uppercase; /* Uppercase text */
+}
+
+/* Title style */
+.mat-card-title {
+  font-size: 24px; /* Larger title font size */
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for emphasis */
+}
+
+/* Content style */
+.mat-card-content {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  border: 1px solid #f4a4ab; /* Border for content */
+  border-radius: 10px; /* Rounded corners for content */
+  color: #333; /* Content text color */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for content */
+}
+
+
+
+
+/* Add this to your component's CSS file */
+.special-date {
+  background-color: red;
+}
+
+
+.mat-calendar-body-cell.selected
+{
+  background-color:red!important;
+  border-radius: 50%
+}
+.drop-calendar
+{
+  width:30rem
+}

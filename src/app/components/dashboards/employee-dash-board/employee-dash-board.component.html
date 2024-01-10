@@ -1,0 +1,84 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidebar mode="side" [opened]="sidenavOpen">
+    <!-- calling emp-sidebar component -->
+    <app-emp-sidebar></app-emp-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content">
+      <div class="main-container">
+        <div class="main">
+
+          <ng-container *ngIf="selectedContent === 'compensation'">
+            <!-- client compensation -->
+          <ng-container *ngIf="selectedSubtopic === 'Client Compensation'">
+            <mat-card class="custom-card">
+              <mat-card-header class="custom-card-header">
+                <mat-card-title>Client Compensation</mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="mat-card-content">
+                <p><strong>Client Name:</strong> {{ clientCompensation.clientName }}</p>
+                <p><strong>Compensation Amount:</strong> {{ clientCompensation.compensationAmount | currency }}</p>
+                <p><strong>Compensation Date:</strong> {{ clientCompensation.compensationDate | date }}</p>
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+
+          <!-- support compensation -->
+          <ng-container *ngIf="selectedSubtopic === 'Support Compensation'">
+            <mat-card class="custom-card">
+              <mat-card-header class="custom-card-header">
+                <mat-card-title>Support Compensation</mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="mat-card-content">
+                <p><strong>Support Name:</strong> {{ supportCompensation.supportName }}</p>
+                <p><strong>Compensation Amount:</strong> {{ supportCompensation.compensationAmount | currency }}</p>
+                <p><strong>Compensation Date:</strong> {{ supportCompensation.compensationDate | date }}</p>
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+
+          <!-- performance-based compensation -->
+          <ng-container *ngIf="selectedSubtopic === 'Performance-Based Compensation'">
+            <mat-card class="custom-card">
+              <mat-card-header class="custom-card-header">
+                <mat-card-title>Performance-Based Compensation</mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="mat-card-content">
+                <p><strong>Employee Name:</strong> {{ performanceCompensation.employeeName }}</p>
+                <p><strong>Compensation Amount:</strong> {{ performanceCompensation.compensationAmount | currency }}</p>
+                <p><strong>Compensation Date:</strong> {{ performanceCompensation.compensationDate | date }}</p>
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+
+          <!-- basic compensation -->
+          <ng-container *ngIf="selectedSubtopic === 'Basic Compensation'">
+            <mat-card class="custom-card">
+              <mat-card-header class="custom-card-header">
+                <mat-card-title>Basic Compensation</mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="mat-card-content">
+                <p><strong>Employee Name:</strong> {{ basicCompensation.employeeName }}</p>
+                <p><strong>Compensation Amount:</strong> {{ basicCompensation.compensationAmount | currency }}</p>
+                <p><strong>Compensation Date:</strong> {{ basicCompensation.compensationDate | date }}</p>
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+          </ng-container>
+
+          <!-- calendar -->
+          <ng-container *ngIf="selectedContent === 'calendar'">
+              <app-custom-calendar></app-custom-calendar>
+          </ng-container>
+
+          <!-- Application -->
+          <ng-container  *ngIf="selectedContent === 'applications'">
+               <app-applications></app-applications>
+          </ng-container>
+            
+          
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

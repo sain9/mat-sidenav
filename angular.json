@@ -30,7 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/theme.scss",
+              "./node_modules/@mobiscroll/angular/dist/css/mobiscroll.min.css"
             ],
             "scripts": []
           },
@@ -93,12 +95,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/theme.scss"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a45c1d50-6091-4ffd-9893-87c3eac5ed1a"
   }
 }

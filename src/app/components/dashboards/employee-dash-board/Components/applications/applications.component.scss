@@ -1,0 +1,40 @@
+//forn button
+.form-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cancel-button,
+.submit-button {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 0vh; /* Optional: Adjust the height as needed */
+    height: 40vh;
+    margin-top: 15vh;
+    margin-bottom: 6vh ;
+  }
+
+  mat-card-subtitle {
+    margin-top: -5vh;
+  }
+
+  mat-card-header {
+      font-size: larger;
+      color: gray;
+   
+  }
+
+  // .mat-form-field{
+  //   margin-bottom: -80px;
+  // }
+ 

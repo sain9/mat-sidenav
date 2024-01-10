@@ -1,0 +1,62 @@
+
+<div class="body">
+
+<!-- form -->
+  <ng-container > 
+  
+    <form   [formGroup]="applicationForm"  (ngSubmit)="submitApplication()" >
+       
+      <div fxLayout="column" fxLayoutAlign="center center" class="form-wrapper">
+
+          <mat-card-header backGroundColor="primary" fxFlex="100%">
+            <mat-card-title style="font-weight: bold;"  backGroundColor="primary">Application Form</mat-card-title>
+          </mat-card-header>
+        <mat-card-subtitle style="font-weight: bold; margin-bottom: 5px;">Required Details</mat-card-subtitle>
+
+        <!-- // name -->
+        <div class="mat-form-field" fxFlex="100%">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Full Name</mat-label>
+            <input class="form-control" formControlName="name" type="string" matInput placeholder="name" required>
+            <small *ngIf="!applicationForm.get('name') && applicationForm.get('name')" class="form-text text-danger">Please Enter Name.</small>  
+            <mat-icon matSuffix>account_circle</mat-icon>  
+          </mat-form-field>
+        </div>
+<!-- Purpose -->
+        <div class="mat-form-field" fxFlex="100%">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Purpose</mat-label>
+              <input class="form-control" formControlName="purpose" type="string" matInput placeholder="purpose" required>
+              <small *ngIf="!applicationForm.get('purpose') && applicationForm.get('purpose')" class="form-text text-danger">Please Enter Purpose.</small>  
+              <mat-icon matSuffix>message</mat-icon>  
+            </mat-form-field>
+          </div>
+<!-- Date -->
+        <div fxFlex="100%">
+            <mat-form-field appearance="outline" class="form-field" appearance="fill">
+              <mat-label>Date</mat-label>
+                  <input class="form-control" opened="true" formControlName="date" matInput [matDatepicker]="picker" required>
+                  <small *ngIf="!applicationForm.get('date') && applicationForm.get('date')" class="form-text text-danger">Please Enter Date.</small>  
+                  <mat-hint>DD/MM/YYYY</mat-hint>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker  #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        <br>
+
+ <!--Go Back, Submit or Save Buttons -->
+ <div fxLayout="row" fxLayoutAlign="space-between center" class="form-btn">
+  <div fxFlex="100%" class="cancel-button"> <!-- Apply the cancel-button class here -->
+    <button mat-stroked-button (click)=" goBack()">Go back</button>
+  </div>&nbsp;
+  <div fxFlex="100%" class="submit-button"> <!-- Apply the submit-button class here -->
+    <button mat-stroked-button type="submit">Submit</button>
+  </div>
+</div>
+
+
+</div>
+</form>
+</ng-container>
+
+</div>

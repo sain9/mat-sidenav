@@ -1,0 +1,49 @@
+// .example-container {
+//     width: 500px;
+//     height: 85vh;
+//     // border: 1px solid rgba(0, 0, 0, 0.5);
+//     background-color: white;
+//   }
+  
+//   .example-sidenav-content {
+//     display: flex;
+//     height: 100%;
+//     align-items: center;
+//     justify-content: center;
+//   }
+  
+//   .example-sidenav {
+//     padding: 20px;
+//     background-color: rgb(201, 193, 193);
+//   }
+  
+.mat-sidenav {
+  margin-top:1.2rem;
+  height: calc(100vh - 12vh); 
+  width: 15rem;
+  background-color: #21343e;
+  color: white;
+  border: 3px solid #263238;
+}
+
+.mat-sidenav-content {
+  margin-top:1.2rem;
+  height: calc(100vh - 12vh); 
+  // background: linear-gradient(to bottom, #212223, #464f59, #4b6471);
+}
+
+// .main {
+//   margin-left: 1.5rem;
+//   font-weight: 900;
+//   font-size: 1.3rem;
+//   color: rgb(142, 143, 142);
+// }
+
+@media (max-width: 768px) {
+  .mat-sidenav {
+    width: 100%;
+  }
+  .main{
+    margin-left: 0;
+  }
+}

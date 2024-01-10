@@ -1,0 +1,121 @@
+<div class="body">
+  <div class="addbtn">
+    <a >
+      &nbsp;&nbsp;&nbsp;<button  mat-raised-button  (click)="addEmpBtn()"><mat-icon>group_add</mat-icon>Add Employee</button>
+    </a>&nbsp;
+</div>
+  <!-- <hr> -->
+  
+  
+  <br>
+  <ng-container *ngIf="add || editMode"> 
+    
+        <form  [formGroup]="empForm" (ngSubmit)="addEmployee()">
+           <br><br><br>
+    
+          <div fxLayout="column" fxLayoutAlign="center center" class="form-wrapper">
+    
+              <mat-card-header backGroundColor="primary" fxFlex="100%">
+                <mat-card-title style="font-weight: bold; margin-bottom: 3px;"  backGroundColor="primary">{{editMode ? 'Edit Employee' : 'Register' }} !</mat-card-title>
+              </mat-card-header>
+        <!-- // name -->
+            <mat-card-subtitle style="font-weight: bold; margin-bottom: 3px;">Employee Details</mat-card-subtitle>
+            <div fxFlex="100%">
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Full Name</mat-label>
+                <input class="form-control" formControlName="name" type="string" matInput placeholder="name" required>
+                <small *ngIf="!empForm.get('name') && empForm.get('name')" class="form-text text-danger">Please Enter Name.</small>  
+                <mat-icon matSuffix>account_circle</mat-icon>
+                  
+              </mat-form-field>
+            </div>
+    <!-- //position -->
+            <div fxFlex="100%">
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Position</mat-label>
+                  <input class="form-control" formControlName="position" type="text" matInput placeholder="Position" required>
+                  <mat-icon  matSuffix>label</mat-icon>
+                  <!-- <small *ngIf="!empForm.get('name').valid && empForm.get('name').touched" class="form-text text-danger">Please Enter Name.</small> -->
+              </mat-form-field>
+            </div>
+          <!-- //about -->
+            <div fxFlex="100%">
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>About</mat-label>
+                <input class="form-control" formControlName="about" type="text" matInput placeholder="About" required>
+                    <mat-icon  matSuffix >public</mat-icon>
+              </mat-form-field>
+            </div>
+    <!-- //joining_date -->
+            <div fxFlex="100%">
+              <mat-form-field appearance="outline" class="form-field" appearance="fill">
+                <mat-label>Joining Date</mat-label>
+                    <input class="form-control" opened="true" formControlName="joining_date" matInput [matDatepicker]="picker" required>
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker  #picker></mat-datepicker>
+              </mat-form-field>
+            </div>  
+            <br>
+
+     <!--Go Back, Submit or Save Buttons -->
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="form-btn">
+          <div fxFlex="100%">
+                  <button mat-stroked-button (click)="goBack()" >Go back</button>
+           </div>
+            <div fxFlex="100%" *ngIf="!editMode">
+                  <button mat-stroked-button type="submit" >Submit</button>
+            </div>
+            <div fxFlex="100%" *ngIf="editMode">
+                    <button mat-stroked-button  type="submit" (click)="updateEmployee()" >Save<mat-icon>done_all</mat-icon></button>
+             </div>
+      </div>
+
+  </div>
+</form>
+</ng-container>
+  
+<ng-container *ngIf="cardView">
+<div class="card-container">
+    <mat-card  class="example-card" *ngFor="let item of employees ;  let ind = index">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title style="font-weight:900; color: darkcyan; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><mat-icon>account_box</mat-icon> <span>&nbsp;</span>{{ item.name }}</mat-card-title>
+          
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+     <p> Name: {{ item.name}} </p>
+     <p> Position: {{ item.position}} </p>
+     <p> About: {{ item.about}} </p>
+        <mat-card-subtitle>Joining Date : {{ item.joining_date | date: 'dd/MM/yyyy' }}</mat-card-subtitle>
+      </mat-card-content> 
+      <mat-card-actions  class="card-actions" >
+        
+          <div class="button-group">
+            <button color="accent" class="edit" mat-stroked-button (click)="onEdit(item, ind)">EDIT</button>
+          </div>
+          <div class="button-group">
+            <button color="warn" class="delete" mat-stroked-button (click)="deleteEmployee(item._id)">DELETE</button>
+          </div>
+    
+    
+      </mat-card-actions>
+      <mat-card-footer>
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+    </mat-card>
+</div>
+    <style> 
+      .example-card {
+        align-content: center;
+        max-width: 100%;
+    }
+    .card-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+    </style>
+   </ng-container>
+   
+</div>
